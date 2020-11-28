@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     TextView timerText;
     Button playAgainButton;
     ConstraintLayout constraintLayoutTwo;
+    String y;
 
     // now we create an arraylist to hput all the random numbers that we generated
     ArrayList<Integer> arrayList = new ArrayList<Integer>();
