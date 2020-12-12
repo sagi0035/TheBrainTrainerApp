@@ -44,16 +44,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void playAgain(View view) {
+        // so we reset evething to the beginnig
         amountofCorrectAnswers = 0;
         amountofTries = 0;
+        // we recreate the textview and set it to 0
         toPostRighAndWrongAnswers = (TextView) findViewById(R.id.rightAndWrongLogger);
         toPostRighAndWrongAnswers.setText(Integer.toString(amountofCorrectAnswers) + "/" + Integer.toString(amountofTries));
         correctTextView.setText("");
 
         timerText.setText("30S");
+        // we create a new board
         boardWithNumbers();
+        // remove the playagain chance
         playAgainButton.setVisibility(View.INVISIBLE);
 
+        // and create a new timer
         new CountDownTimer(30000, 1000) {
             @Override
             public void onTick(long l) {
@@ -169,7 +174,7 @@ public class MainActivity extends AppCompatActivity {
         timerText = (TextView) findViewById(R.id.timerTextView);
         correctTextView = (TextView) findViewById(R.id.correctNow);
 
-        // so to get it everywhere we will set the goButton to be a variable on the Oncreate
+        // so heren we will initialise all the views
         goButton = (Button) findViewById(R.id.button);
 
         constraintLayoutTwo = (ConstraintLayout) findViewById(R.id.gameLayout);
